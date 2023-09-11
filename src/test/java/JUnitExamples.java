@@ -7,7 +7,7 @@ public class JUnitExamples {
     @BeforeAll
     static void beforeALL(){
         System.out.println("Here is beforeALL()");
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1536x824";
         Configuration.baseUrl = "https://demoqa.com";
     }
     @BeforeEach

@@ -11,19 +11,20 @@ public class TextBoxTests {
     @BeforeAll
     static void beforeALL(){
         Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
     }
     @Test
     void fillFormTest() {
         open("/text-box");
 
-        $("id=userName").setValue("Nick Fox");
+        $("#userName").setValue("Nick Fox");
         $("#userEmail").setValue("Nick@Fox.wo");
         $("#currentAddress").setValue("Nick, Fox 14");
         $("#permanentAddress").setValue("Fox, Nick 17");
-        $("[id=submit]").click();
+        $("#submit").click();
 
-        $("#output").shouldHave(text("Nik Fox"),
-                text("Nik@Fox.wo"), text("Nik, Fox 14"), text("Fox, Nik 17"));
+        $("#output").shouldHave(text("Nick Fox"), text("Nick@Fox.wo"),
+                text("Nick, Fox 14"), text("Fox, Nick 17"));
     }
 }
